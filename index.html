@@ -44,8 +44,9 @@
       padding: 1.25rem 3rem;
       background: var(--paper);
       border-bottom: 1px solid var(--rule);
+      /* Keeps the overall nav bar at a rigid, clean height */
+      height: 3.5rem; 
     }
-
     .nav-name {
       font-size: 1rem;
       font-weight: 400;
@@ -53,30 +54,33 @@
       color: var(--ink);
       text-decoration: none;
     }
-
     .nav-links {
-  display: flex;
-  gap: 2.5rem;
-  list-style: none;
-  align-items: center; /* This ensures the flex items themselves align */
-}
-
-.nav-links a {
-  font-family: var(--mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-  text-decoration: none;
-  transition: color 0.2s;
-  
-  /* ADD THESE TWO LINES */
-  display: inline-flex;
-  align-items: center;
-}
-
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+      /* Aligns all <li> wrappers perfectly to the center of the nav row */
+      align-items: center; 
+      height: 100%;
+    }
+    .nav-links li {
+      display: flex;
+      align-items: center;
+    }
+    .nav-links a {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      text-decoration: none;
+      transition: color 0.2s;
+      
+      /* Forces all anchors to align content to a uniform dead-center grid */
+      display: flex;
+      align-items: center;
+      line-height: 1; 
+    }
     .nav-links a:hover { color: var(--accent); }
-
     .nav-links .icon-link {
       display: flex;
       align-items: center;
